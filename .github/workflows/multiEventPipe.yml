@@ -4,9 +4,12 @@ on:
     push:
         branches:
             - main
+            - test
+    pull_request:
+        branches:
+            - main
+            - test
         
-
-
 
 jobs:
     on-push:
@@ -14,3 +17,9 @@ jobs:
         steps:
             - name: "Running on main branch"
               run: echo "Running on main branch"
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "pulling on main branch"
+              run: echo "pulling from main branch"
