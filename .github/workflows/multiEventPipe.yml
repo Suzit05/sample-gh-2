@@ -1,24 +1,26 @@
 name: "Multi event pipeline"
 
 on:
-    push:
+    push: #event
         branches:
             - main
             - test
-    pull_request:
+    pull_request: #event
         branches:
             - main
             - test
         
 
 jobs:
-    on-push:
+    on-push: #job1 name
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
             - name: "Running on main branch"
               run: echo "Running on main branch"
 
-    on-pull-request:
+    on-pull-request: #job 2
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
             - name: "pulling on main branch"
