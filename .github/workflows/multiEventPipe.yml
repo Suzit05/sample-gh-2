@@ -1,0 +1,16 @@
+name: "Multi event pipeline"
+
+on:
+    push:
+        branches:
+            - main
+        
+
+
+
+jobs:
+    on-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on main branch"
+              run: echo "Running on main branch"
