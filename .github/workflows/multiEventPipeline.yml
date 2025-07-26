@@ -18,7 +18,7 @@ jobs:
             - name: "Running on main branch"
               run: echo "Running on main branch"
 
-    on-pull:
+    on-pull-request:
         runs-on: ubuntu-latest
         steps:
             - name: "pulling on main branch"
