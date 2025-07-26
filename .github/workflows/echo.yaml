@@ -1,8 +1,10 @@
 name: "Echo workflow"
 
 on:
-    push:
-
+     push:
+        branches:
+            - main
+            - test
 jobs:
     echo:
         runs-on: ubuntu-latest

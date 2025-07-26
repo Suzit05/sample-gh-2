@@ -1,1 +1,2 @@
-trigger when push to any branch
+trigger when push to main and test
+2 yml file
