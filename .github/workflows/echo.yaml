@@ -1,0 +1,11 @@
+name: "Echo workflow"
+
+on:
+    push:
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print commit happens"
+              run:  echo "Commit happens and push trigger"
