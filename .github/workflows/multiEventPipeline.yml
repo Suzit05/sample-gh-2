@@ -7,11 +7,15 @@ on:
             - test
         
 
-
-
 jobs:
     on-push:
         runs-on: ubuntu-latest
         steps:
             - name: "Running on main branch"
               run: echo "Running on main branch"
+
+    on-pull:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "pulling on main branch"
+              run: echo "pulling from main branch"
