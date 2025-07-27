@@ -9,6 +9,9 @@ on:
         branches:
             - main
             - test
+        types:
+            - closed
+            - opened
 
     workflow_dispatch:
 
@@ -29,9 +32,23 @@ jobs:
             - name: "pulling on main branch"
               run: echo "pulling from main branch"
     
-    on-workflow_dispatch: #job 2
+    on-workflow_dispatch: #job 3
         if: github.event_name == 'workflow_dispatch'
         runs-on: ubuntu-latest
         steps:
             - name: "running on wrkflow dispatch"
               run: echo "running on wrkflow dispatch"
+    
+    on-pull-request-closed: #job 4
+        if: github.event_name == 'pull_request' && github.event.action=='closed'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "running on pull request closed"
+              run: echo "running on pull request cloded"
+    
+    on-pull-request-opened: #job 4
+        if: github.event_name == 'pull_request' && github.event.action=='opened'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "running on pull request opened"
+              run: echo "running on pull request opened"
